@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finnish Fun for Kids</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Homepage -->
+    <div id="home" class="section">
+        <h1>Welcome to Finnish Fun Land!</h1>
+        <p>Hei hei! Learn Finnish with stories, games, and magic words. Perfect for kids like you!</p>
+        <div class="nav-buttons">
+            <button onclick="showSection('story')">Read a Story</button>
+            <button onclick="showSection('translate')">Translate Time</button>
+            <button onclick="showSection('tips')">Fun Tips</button>
+        </div>
+    </div>
+
+    <!-- Reading Comprehension Section -->
+    <div id="story" class="section" style="display: none;">
+        <h2>Koiran Seikkailu (The Dog’s Adventure)</h2>
+        <p>Minulla on koira. Sen nimi on Lassi. Eräänä päivänä Lassi menee ulos. Hän näkee kissan. “Moi moi, kissa!” Lassi sanoo. Kissa juoksee pois. Lassi haluaa jäätelöä, mutta äiti sanoo, “Ei, Lassi, sinulla on vettä.” Lassi on surullinen, mutta sitten hän löytää lelun. “Minä tykkään tästä!” hän haukkuu.</p>
+        <h3>Questions</h3>
+        <form id="quizForm">
+            <p>1. Mikä on koiran nimi? (What is the dog’s name?)</p>
+            <input type="radio" name="q1" value="Kissa"> Kissa<br>
+            <input type="radio" name="q1" value="Lassi"> Lassi<br>
+            <input type="radio" name="q1" value="Äiti"> Äiti<br>
+
+            <p>2. Mitä Lassi näkee? (What does Lassi see?)</p>
+            <input type="radio" name="q2" value="Jäätelöä"> Jäätelöä<br>
+            <input type="radio" name="q2" value="Kissan"> Kissan<br>
+            <input type="radio" name="q2" value="Vettä"> Vettä<br>
+
+            <p>3. Haluaako Lassi vettä? (Does Lassi want water?)</p>
+            <input type="radio" name="q3" value="Kyllä"> Kyllä<br>
+            <input type="radio" name="q3" value="Ei"> Ei<br>
+            <input type="radio" name="q3" value="En tiedä"> En tiedä<br>
+
+            <p>4. Mitä äiti sanoo Lassille? (What does Mom say to Lassi?)</p>
+            <input type="radio" name="q4" value="Minä tykkään!"> Minä tykkään!<br>
+            <input type="radio" name="q4" value="Sinulla on vettä."> Sinulla on vettä.<br>
+            <input type="radio" name="q4" value="Moi moi!"> Moi moi!<br>
+
+            <p>5. Onko Lassi iloinen lopussa? (Is Lassi happy at the end?)</p>
+            <input type="radio" name="q5" value="Kyllä"> Kyllä<br>
+            <input type="radio" name="q5" value="Ei"> Ei<br>
+            <input type="radio" name="q5" value="En tiedä"> En tiedä<br>
+
+            <button type="button" onclick="checkQuiz()">Check Answers</button>
+        </form>
+        <p id="quizResult"></p>
+        <button onclick="showSection('home')">Back to Home</button>
+    </div>
+
+    <!-- Translation Tool Section -->
+    <div id="translate" class="section" style="display: none;">
+        <h2>Translate Time</h2>
+        <div id="finnishToEnglish">
+            <h3>Finnish to English</h3>
+            <p id="finnishWord"></p>
+            <input type="text" id="finnishAnswer" placeholder="Type the English meaning">
+            <button onclick="checkTranslation('finnish')">Check It!</button>
+            <p id="finnishResult"></p>
+            <button onclick="nextFinnishWord()">Next Word</button>
+        </div>
+        <div id="englishToFinnish">
+            <h3>English to Finnish</h3>
+            <p id="englishWord"></p>
+            <input type="text" id="englishAnswer" placeholder="Type the Finnish word">
+            <button onclick="checkTranslation('english')">Check It!</button>
+            <p id="englishResult"></p>
+            <button onclick="nextEnglishWord()">Next Word</button>
+        </div>
+        <button onclick="showSection('home')">Back to Home</button>
+    </div>
+
+    <!-- Fun Tips Section -->
+    <div id="tips" class="section" style="display: none;">
+        <h2>Fun Tips</h2>
+        <ul>
+            <li>Say "Moi moi" to your toys every day—it’s Finnish for Hi hi!</li>
+            <li>Count to 3 in Finnish: Yksi, kaksi, kolme. Easy peasy!</li>
+            <li>When you’re hungry, shout "Minulla on nälkä!"—it works!</li>
+            <li>Practice with a friend—ask "Mitä sinä teet?" (What are you doing?)</li>
+        </ul>
+        <button onclick="showSection('home')">Back to Home</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
